@@ -449,7 +449,7 @@ if CLIENT then
 	local EC_PLAYER_PASTEL = CreateConVar("easychat_pastel", "0", FCVAR_ARCHIVE, "Should players have pastelized colors instead of their team color")
 
 	-- misc
-	local EC_SECONDARY = CreateConVar("easychat_secondary_mode", "team", FCVAR_ARCHIVE, "Opens the chat in the selected mode with the secondary chat bind")
+	local EC_SECONDARY = CreateConVar("easychat_secondary_mode", "local", FCVAR_ARCHIVE, "Opens the chat in the selected mode with the secondary chat bind")
 	local EC_ALWAYS_LOCAL = CreateConVar("easychat_always_local", "0", FCVAR_ARCHIVE, "Should we always type in local chat by default")
 	local EC_ONLY_LOCAL = CreateConVar("easychat_only_local", "0", FCVAR_ARCHIVE, "Only receive local messages")
 	local _ = CreateConVar("easychat_local_msg_distance", "300", {FCVAR_ARCHIVE, FCVAR_USERINFO}, "Set the maximum distance for users to receive local messages", 150, 1000)
@@ -1802,10 +1802,6 @@ if CLIENT then
 		queued_upload = nil
 		ec_ctrl_shortcuts = {}
 		ec_alt_shortcuts = {}
-
-		EasyChat.AddMode("Team", function(text)
-			EasyChat.SendGlobalMessage(text, true, false)
-		end)
 
 		EasyChat.AddMode("Local", function(text)
 			EasyChat.SendGlobalMessage(text, false, true)
