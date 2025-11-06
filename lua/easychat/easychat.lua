@@ -638,9 +638,6 @@ if CLIENT then
 	end
 
 	function EasyChat.CanUseCEFFeatures()
-		if CEFCodecFixChecked and CEFCodecFixAvailable then return true end -- if someone has the cefcodexfix we're fine
-		if not system.IsWindows() then return false end -- cef is awfully broken on linux/osx
-
 		return true
 	end
 
