@@ -220,9 +220,9 @@ if CLIENT then
 				if not IsValid(chat.Player) then return end
 
 				if chat.NewMessages > 0 then
-					line:SetColumnText(1, chat.Player:RichNick() .. " (" .. chat.NewMessages .. ")")
+					line:SetColumnText(1, chat.Player:Nick() .. " (" .. chat.NewMessages .. ")")
 				else
-					line:SetColumnText(1, chat.Player:RichNick())
+					line:SetColumnText(1, chat.Player:Nick())
 				end
 			end
 		end,
