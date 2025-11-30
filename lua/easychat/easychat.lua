@@ -723,7 +723,7 @@ if CLIENT then
 				EasyChat.Mode = requested_mode
 			else
 				if EC_ALWAYS_LOCAL:GetBool() then
-					EasyChat.Mode = 2
+					EasyChat.Mode = 1
 				else
 					EasyChat.Mode = 0
 				end
